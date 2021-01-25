@@ -7,3 +7,12 @@
   letter-spacing: 9px;
   text-transform: uppercase;
 }
+
+// Стили для узора разделяющего разделы
+.pattern__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  pointer-events: none;
+}

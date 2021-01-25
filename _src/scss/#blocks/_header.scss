@@ -1,20 +1,23 @@
-.header {
-  // width: 100%;
-  // height: calc(100vh - 90px);
-}
+
 .header__body {
   width: 100%;
-  height: calc(100vh - 60px)!important;
+  height: calc(100vh - 90px)!important;
+  margin: 0 0 118px 0;
   position: relative;
-}
-.header__slider {
-  // width: 100%;
-  // height: 100%;
+  @media screen and (max-width: 768px) {
+    height: calc(100vh - 60px)!important;
+  }
+  @media screen and (max-width: 510px) {
+    margin: 0 0 80px 0;
+  }
 }
 .header__slide {
   width: 100%;
-  height: calc(100vh - 60px)!important;
+  height: calc(100vh - 90px)!important;
   position: relative;
+  @media screen and (max-width: 768px) {
+    height: calc(100vh - 60px)!important;
+  }
 }
 .header__slide-img {
   // position: absolute;
@@ -23,6 +26,7 @@
   width: 100%;
   height: 100%;
   position: relative;
+  background: $main;
   &:before {
     content: '';
     position: absolute;
@@ -60,11 +64,16 @@
     left: 24px;
   }
 }
+// Переменные для анимации
+$animSlideTranslate: translate(0,40px);
+$animSlideDuration: .4s;
 .header__slide-title {
   font-family: "Lora", serif;
   font-size: 42px;
   color: #FFFFFF;
-  margin: 0 0 32px 0;
+  margin: 0 0 18px 0;
+  opacity: 0;
+  transform: $animSlideTranslate;
 }
 .header__slide-text {
   max-width: 560px;
@@ -72,14 +81,44 @@
   font-weight: 400;
   color: #FFFFFF;
   line-height: 1.7;
-  margin: 0 0 64px 0;
+  margin: 0 0 48px 0;
+  opacity: 0;
+  transform: $animSlideTranslate;
 }
 .header__slide__buttons {
   display: flex;
   align-items: center;
   max-width: 400px;
+  opacity: 0;
+  transform: $animSlideTranslate;
   @media screen and (max-width: 410px) {
     width: 100%;
+  }
+}
+.slick-active .header__slide-title {
+    animation-name: showSlide;
+    animation-duration: $animSlideDuration;
+    animation-fill-mode: forwards;
+}
+.slick-active .header__slide-text {
+    animation-name: showSlide;
+    animation-duration: $animSlideDuration;
+    animation-delay: .1s;
+    animation-fill-mode: forwards;
+}
+.slick-active .header__slide__buttons {
+    animation-name: showSlide;
+    animation-duration: $animSlideDuration;
+    animation-delay: .2s;
+    animation-fill-mode: forwards;
+}
+@keyframes showSlide {
+  from {
+    opacity: 0;
+    transform: $animSlideTranslate;
+  } to {
+    opacity: 1;
+    transform: translate(0,0);
   }
 }
 .header__slide-btn {
