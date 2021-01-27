@@ -168,7 +168,7 @@
     &:hover p {
       color: $accent;
     }
-    &:hover svg path {
+    &.nav__menu-arrow:hover svg path {
       stroke: $accent;
     }
   }
@@ -214,6 +214,18 @@
   height: 100%;
   text-align: center;
   padding: 16px 0;
+  position: relative;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translate(0,-50%);
+    width: 1px;
+    height: 50%;
+    background: $outline;
+    opacity: .7;
+  }
   & ~ .nav__menu__link {
     padding: 16px 0 16px 32px;
   }

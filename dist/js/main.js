@@ -3,7 +3,7 @@
 const body = document.querySelector('body');
 
 // Меню
-console.log(body)
+
 const menu = document.querySelector('.nav__menu'),
       menuBody = document.querySelector('.nav__menu__body'),
       burger = document.querySelector('.nav-burger-icon'),
