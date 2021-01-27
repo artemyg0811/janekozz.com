@@ -1324,6 +1324,20 @@ section {
   }
 }
 
+@media screen and (max-width: 550px) {
+  .question-contact {
+    margin: 0 12px 0 0;
+  }
+
+  .question-contact-request a {
+    padding: 0;
+  }
+
+  .question__link {
+    padding: 0 4px !important;
+  }
+}
+
 @media screen and (max-width: 520px) {
   .nav__container {
     padding: 0 32px;
@@ -1356,6 +1370,18 @@ section {
 
   .services-card {
     padding: 8px 0;
+  }
+
+  .question__contacts {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+
+  .question-contact {
+    max-width: none;
+    margin: 0 0 8px 0;
   }
 }
 
@@ -1425,6 +1451,14 @@ section {
 }
 
  @media screen and (max-width: 680px){
+
+@supports (-webkit-appearance:none){
+
+}
+
+}
+
+ @media screen and (max-width: 550px){
 
 @supports (-webkit-appearance:none){
 
