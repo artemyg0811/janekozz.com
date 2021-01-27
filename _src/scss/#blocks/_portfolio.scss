@@ -1,0 +1,177 @@
+.portfolio__body {
+  // display: flex;
+  // position: relative;
+  // min-height: 2000px;
+}
+.portfolio-moving {
+  display: inline-block;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 32px;
+  vertical-align: top;
+  // top: 0;
+  // left: 0;
+  // width: 290px;
+  width: 25%;
+}
+.portfolio-title {
+  margin: 0 0 32px 0;
+}
+.portfolio-moving {
+  // max-width: 290px;
+  // width: 100%;
+
+}
+.portfolio-moving__filter {
+  max-width: 232px;
+  margin: 0 0 70px 0;
+}
+.portfolio-moving-point {
+  width: 100%;
+}
+.portfolio-moving-link {
+  width: 100%;
+  height: 100%;
+  font-size: 15px;
+  font-weight: 600;
+  padding: 10px 12px;
+  &:hover {
+    background: rgba(232,58,48,.05);
+  }
+  &._selected {
+    background: rgba(232,58,48,.05);
+  }
+}
+.portfolio-top {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 12px;
+  text-align: center;
+  margin: 0 0 12px 0;
+}
+.portfolio-top__body {
+  display: flex;
+  align-items: center;
+  &:hover {
+    & .portfolio-top-text {
+      color: $accent;
+    }
+    & .portfolio-top-icon svg path {
+      stroke: $accent;
+    }
+  }
+}
+.portfolio-top-text {
+  margin: 0 8px 0 0;
+  transition: .2s;
+}
+.portfolio-top-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: rotate(180deg);
+  & svg path {
+    transition: .2s;
+  }
+}
+.portfolio__insta {
+  width: 100%;
+  display: flex;
+
+  border: 1px solid $main;
+  border-radius: 5px;
+}
+.portfolio__insta-icon {
+  margin: 0 12px 0 0;
+}
+.portfolio__insta-text {
+  font-weight: 600;
+}
+.portfolio__insta__link {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 7px 16px;
+  transition: .2s;
+  &:hover {
+    & .portfolio__insta-icon svg path{
+      fill-opacity: .7;
+    }
+    .portfolio__insta-text {
+      opacity: .7;
+    }
+  }
+}
+.portfolio__insta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  margin: 0 10px 0 0;
+  transition: .2s;
+}
+.portfolio__insta-text {
+  font-weight: 600;
+  transition: .2s;
+}
+.portfolio__insta-copy {
+  width: 44px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 9px 12px;
+  position: relative;
+  &:hover {
+    & .portfolio__insta-copy-icon svg path {
+      fill-opacity: .7;
+    }
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 1px;
+    height: 100%;
+    background: $main;
+  }
+}
+.portfolio__insta-copy-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .2s;
+}
+.portfolio-images {
+  display: inline-block;
+  width: 75%;
+  vertical-align: top;
+}
+.portfolio-images__list {
+  display: flex;
+  flex-wrap: wrap;
+}
+.portfolio__img {
+  display: inline-block;
+  position: relative;
+  &:hover {
+    & .portfolio__img-link {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+}
+.portfolio__img-link {
+  position: absolute;
+  top: 8px;
+  right: 10px;
+  visibility: hidden;
+  opacity: 0;
+  transition: .2s;
+  &:hover svg path {
+    fill: #ffffff;
+  }
+}
+.portfolio__img-link svg path {
+  transition: .2s;
+}

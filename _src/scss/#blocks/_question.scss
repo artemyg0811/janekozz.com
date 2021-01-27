@@ -1,3 +1,6 @@
+.question {
+  margin: 0 0 100px 0;
+}
 .question-title {
   text-align: center;
   margin: 0 0 42px 0;
@@ -75,6 +78,11 @@
   border: 1px solid $accent;
   text-align: center;
   padding: 0 8px;
+  transition: .2s;
+  &:hover {
+    background: $accent;
+    color: #FFFFFF;
+  }
   @media screen and (max-width: 550px) {
     padding: 0;
   }
@@ -88,11 +96,28 @@
   font-weight: 500;
   border: 1px solid $main;
   border-radius: 4px;
+  transition: .2s;
+  &:hover {
+    background: $main;
+    & .question-contact-icon svg path {
+      fill: #FFFFFF;
+      fill-opacity: 1;
+    }
+    & .question-contact-text {
+      color: #FFFFFF;
+    }
+  }
   @media screen and (max-width: 550px) {
     // font-size: 12px;
     padding: 0 4px!important;
   }
 }
+.question-contact-text {
+  transition: .2s;
+}
 .question-contact-icon {
   margin: 2px 4px 0 0;
+  & svg path {
+    transition: .2s;
+  }
 }

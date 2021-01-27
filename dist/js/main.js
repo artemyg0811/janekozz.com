@@ -99,7 +99,6 @@ for (let pointAward of pointAwards) {
       imgAwards[i].closest('.awards__img-item').classList.remove('_show');
     }
     imgAward.closest('.awards__img-item').classList.add('_show');
-    console.log(imgAward);
     e.preventDefault();
   });
 }
