@@ -249,3 +249,87 @@
     text-transform: uppercase;
   }
 }
+
+.nav-signup-container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.nav-signup__body {
+  padding: 36px 0;
+}
+.nav-signup-form {
+  margin: 0 0 42px 0;
+}
+.nav-signup-input {
+  width: 100%;
+  height: 32px;
+  border: 1px solid rgba(33,33,33,.2);
+  margin: 0 0 10px 0;
+  padding: 0 12px;
+  &::placeholder {
+    color: rgba(33,33,33,.5)
+  }
+}
+.nav-sign-input-message {
+  max-width: 320px;
+  min-height: 64px;
+  padding: 9px 12px;
+}
+.nav-signup-btn {
+  width: 100%;
+  height: 32px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  border: 1px solid $accent;
+  color: $accent;
+  margin: 12px 0 0 0;
+  transition: .2s;
+  &:hover {
+    background: $accent;
+    color: #fff;
+  }
+}
+.nav-signup-more-title {
+  font-weight: 600;
+  margin: 0 0 16px 0;
+}
+.nav-signup__messengers {
+  width: 100%;
+  display: flex;
+  align-items: center;
+}
+.nav-signup-messenger {
+  width: 50%;
+  height: 32px;
+  margin: 0 10px 0 0;
+  &:last-child {
+    margin: 0;
+  }
+  &:nth-child(1) .nav-signup-messenger-link {
+    background: #48C95F;
+  }
+  &:nth-child(2) .nav-signup-messenger-link {
+    background: #2F89CE;
+  }
+}
+.nav-signup-messenger-link {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: 500;
+  border-radius: 4px;
+}
+.nav-signup-messenger-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 4px 0 0;
+}
+.nav-signup-messenger-text {
+  color: #FFFFFF;
+}

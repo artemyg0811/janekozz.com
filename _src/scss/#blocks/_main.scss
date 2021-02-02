@@ -23,3 +23,12 @@ section {
   user-select: none;
   pointer-events: none;
 }
+
+.sticky {
+  position: fixed;
+  z-index: 101;
+}
+.stop {
+  position: relative;
+  z-index: 101;
+}
