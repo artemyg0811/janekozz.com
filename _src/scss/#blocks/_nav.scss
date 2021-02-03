@@ -181,6 +181,13 @@
     }
   }
 }
+.nav__menu__accordion__header svg {
+  transition: .2s;
+}
+.nav__menu__accordion__header._active svg {
+  transform: scale(-1,-1);
+  transform-origin: center;
+}
 .nav__menu__accordion {
   flex-wrap: wrap;
   &__body {

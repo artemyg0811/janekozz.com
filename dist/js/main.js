@@ -47,6 +47,29 @@ form.addEventListener('submit', formSend);
 
 async function formSend(e) {
   e.preventDefault();
+
+  const formData = new FormData(form);
+
+  const response = await fetch('telegram.php', {
+    method: 'POST',
+    body: formData
+  });
+  if (response.ok) {
+    const result = await response.json();
+    form.reset();
+    // alert(result.message);
+    const successful = document.querySelector('.response-successful');
+    successful.classList.add('_show');
+    setTimeout(() => {
+      successful.classList.remove('_show');
+    }, 3000);
+  } else {
+    const error = document.querySelector('.response-error');
+    error.classList.add('_show');
+    setTimeout(() => {
+      error.classList.remove('_show');
+    }, 3000);
+  }
 }
 
 // Аккордион в меню
@@ -63,6 +86,7 @@ accordionHeaders.forEach(accordionHeader => {
     } else {
       accordionBody.style.maxHeight = 0;
     }
+    this.classList.toggle('_active');
   });
 
   if (accordionHeader.classList.contains('_active')) {
@@ -73,12 +97,20 @@ accordionHeaders.forEach(accordionHeader => {
 });
 
 // плавный скролл до якорей
-$("body").on('click', '[href*="#"]', function(e){ // при клике на элементы body содержащие в себе "href=#"  =>
-  const fixedOffset = 0; 
-  $('html,body').stop().animate({ scrollTop: $(this.hash).offset().top - fixedOffset }, 1000); // пользователя переведет на указанный в href якорь со скоростью 1000ms и с отступом 100px сверху
-  e.preventDefault();
-});
+const smoothLinks = document.querySelectorAll('a[href^="#"]');
+for (let smoothLink of smoothLinks) {
+    smoothLink.addEventListener('click', function (e) {
+        e.preventDefault();
+        const id = smoothLink.getAttribute('href');
 
+        document.querySelector(id).scrollIntoView({
+            behavior: 'smooth',
+            block: 'start'
+        });
+        menu.classList.remove('_show');
+        body.classList.remove('_lock');
+    });
+}
 // Слайдер на главном экране
 $('.header__slider').slick({
   dots: true,
@@ -162,12 +194,12 @@ for (let filterLink of filterLinks) {
 const portfolioSection = document.querySelector('#portfolio'),
       portfolioArrowTop = document.querySelector('.portfolio-top');
 
-window.addEventListener('scroll', e => {
-  // if (pageYOffset = 300) {
-  //   portfolioArrowTop.classList.add('_show');
-  // }
-  console.log(pageYOffset + 'px');
-});
+// window.addEventListener('scroll', e => {
+//   // if (pageYOffset = 300) {
+//   //   portfolioArrowTop.classList.add('_show');
+//   // }
+//   console.log(pageYOffset + 'px');
+// });
 
 // Скопировать адрес инсты
 new ClipboardJS('.portfolio__insta-copy');
@@ -220,6 +252,7 @@ const currentSelectedLink = document.querySelector('.portfolio-moving-point._sel
 // linkIndicator.style.height = currentSelectedLink[0].clientHeight + 'px';
 // linkIndicator.style.top = currentSelectedLink[0].offsetTop + 'px';
 
+// ФИКСАЦИЯ ФИЛЬТРА В РАЗДЕЛЕ ПОРТФОЛИО
 (function(){
   let a = document.querySelector('.portfolio-moving'), b = null, P = 16;
   window.addEventListener('scroll', Ascroll, false);
